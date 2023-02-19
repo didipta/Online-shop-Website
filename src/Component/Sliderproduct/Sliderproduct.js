@@ -1,155 +1,30 @@
 import { InfiniteCarousel } from "react-leaf-carousel";
-
+import { Allproducthook } from "../Hook/Allproducthook";
+import {faHeart,faStar} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Sliderproduct = () => {
-
+    const [Products,isLoading]=Allproducthook();
+    const {products}=Products;
     return (
-        <div>
-           <InfiniteCarousel
-    breakpoints={[
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ]}
-    dots={true}
-    showSides={true}
-    sidesOpacity={.5}
-    sideSize={.1}
-    slidesToScroll={4}
-    slidesToShow={4}
-    scrollOnDevice={true}
-  >
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=55b64e&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=904098&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ef4d9c&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=00f3d1&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=00ffff&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ee1f34&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=91b4c0&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ff6347&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ebbfbf&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=def1f9&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=cdf2c6&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=9fa616&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=2c4caa&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=44e3e1&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ff6666&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=94e1e3&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=29083c&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ffff99&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=616161&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-    <div>
-      <img
-        alt=''
-        src='https://placeholdit.imgix.net/~text?txtsize=20&bg=ed7ebe&txtclr=ffffff&txt=215%C3%97215&w=215&h=215'
-      />
-    </div>
-  </InfiniteCarousel>
+        <div className="grid grid-cols-5 mt-10 gap-3">
+          {
+            products.map(x=>
+                <div className="flex flex-col shadow-lg justify-center items-center gap-2 p-3 rounded-md ">
+                    <img src={x.picture} alt="" className=" w-24 h-20"></img>
+                    <div className="flex flex-col gap-2">
+                        <h1 className="text-xs font-semibold">{x.name}</h1>
+                        <p className="text-xs ">Price ${x.price}</p>
+                        <div className="flex justify-around ">
+                        <p className="text-xs flex items-center gap-1"><FontAwesomeIcon icon={faStar} className="text-yellow-400"></FontAwesomeIcon>{x.ratting}</p>
+                        <p className='bg-green-700 rounded-full w-7 h-7 flex justify-center items-center text-lg font-semibold text-white'>+</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                )
+          }
+
+  
         </div>
     );
 };

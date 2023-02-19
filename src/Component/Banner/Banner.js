@@ -23,7 +23,16 @@ const Banner = () => {
                     <p className=" w-72 text-xs">Ergonomic or cupe with on-oor controls up to 22 hours of tening time. Apple Wi crip & Closs </p>
                     <p className="text-sm text-blue-400 font-bold">Price $ 450.55</p>
                     <div className="flex justify-between items-center">
-                    <p>Color :</p>
+                    <p  className="flex items-center gap-2"> Color :
+
+                        <div className="flex items-center gap-2">
+                            <div className="w-5 h-5 rounded-full bg-red-600"></div>
+                            <div className="w-5 h-5 rounded-full bg-green-600"></div>
+                            <div className="w-5 h-5 rounded-full bg-blue-600"></div>
+                            <div className="w-5 h-5 rounded-full bg-yellow-600"></div>
+                            <div className="w-5 h-5 rounded-full  bg-white"></div>
+                        </div>
+                    </p>
                     <div className="flex gap-2 items-center bg-slate-50 text-xs">
                     <p onClick={()=>setcount(count-1)} className="cursor-pointer p-1 bg-slate-400 font-semibold">-</p>
                     <p>{count}</p>
