@@ -1,20 +1,22 @@
 import React from 'react';
-import { Product } from '../Hook/Product';
+import { Allproducthook } from '../Hook/Allproducthook';
+
+
 
 const DailyDeals = () => {
     // hook use
-    const [Products,isLoading]=Product();
-
+    const [Products,isLoading]=Allproducthook();
     const {products}=Products;
 
-    console.log(Products);
+    console.log(products)
     return (
         <div>
             <div className="flex justify-between items-center ">
             <h1 className=" font-bold text-md">Daily Deals</h1>
             <a href="#" className="text-sm">View All</a>
             </div>
-            <div className="flex flex-col gap-4 mt-3">
+            {
+                !isLoading&&<div className="flex flex-col gap-4 mt-3">
                 {
                     products.map(p=>
                         <div className="flex justify-between">
@@ -32,6 +34,8 @@ const DailyDeals = () => {
                         )
                 }
             </div>
+            }
+            
             
             
         </div>

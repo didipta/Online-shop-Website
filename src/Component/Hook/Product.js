@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 
-export const Product = () => {
-    const {data: Products = [],refetch,isLoading} = useQuery({
+export const Producthook = () => {
+    const {data: Product = [],refetch,isLoading} = useQuery({
         queryKey: ['Product'],
         queryFn: async() =>{
             const res = await fetch("https://api.hiring.masterkey.tech/api/v1/product/get")
@@ -11,7 +11,7 @@ export const Product = () => {
            
         }
     });
-    return [Products,isLoading];
+    return [Product,isLoading];
 
    
 };
